@@ -23,6 +23,19 @@ def predict_api():
     name=['Setosa','Versicolor','Virginica']
     return jsonify(name[new_data[0]])
 
+@app.route('/predict',methods=['POST'])
+
+def predict():
+    data=[float(x) for x in request.form.values()]
+    final=np.array(data)
+    print(final)
+    output=model.predict(final.reshape(1,-1))
+    name=['Setosa','Versicolor','Virginica']
+    output=name[output[0]]
+    return render_template("output.html",prediction_text="The predicted spicies is {}".format(output))
+
+
+
 if __name__ =="__main__":
     app.run(debug=True)
 

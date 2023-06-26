@@ -1,3 +1,37 @@
-<h1>
-    Hello World
-</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Species Detector</title>
+</head>
+<body style="background-color: #B4E4FF;">
+    <div style="background-color: #C9F4AA; margin:  5% 35% 5% 35% ;padding: 5%; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+        <form action="{{ url_for('predict')}}" method="post">
+            <div>
+                <p>Sepal Length</p>
+                <input style="width: 100%; height: 30px;" type="number" name="SEPL"  step="0.01" required="required" /><br>
+            </div>
+    
+            <div>
+                <p>Sepal Width</p>
+                <input style="width: 100%; height: 30px;" type="number" name="SEPW" step="0.01" required="required" /><br>
+            </div>
+            <div>
+                <p>Petal Length</p>
+                <input style="width: 100%; height: 30px;" type="number" name="PETL" step="0.01" required="required" /><br>
+            </div>
+            <div>
+                <p>Petal Width</p>
+                <input style="width: 100%; height: 30px;" type="number" name="PETW" step="0.01" required="required" /><br>
+            </div>
+    
+            <div align-items: center;>
+                <button style="padding: 10px;margin-top: 10%;width: 100%;" type="submit">Predict</button>
+            </div>
+        </form>
+    </div>
+    
+
+</body>
+</html>
